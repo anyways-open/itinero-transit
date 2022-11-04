@@ -11,7 +11,8 @@
     <PackageTags>CSA;Connection-Scan-Algorithm;Public-Transport;Routing;linked-data;</PackageTags>
     <PackageIconUrl>https://avatars0.githubusercontent.com/u/30265183</PackageIconUrl>
     <PackageProjectUrl>https://github.com/openplannerteam/Itinero-Transit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/openplannerteam/Itinero-Transit</RepositoryUrl>
+    <RepositoryUrl>https://github.com/anyways-open/itinero-transit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicense>https://github.com/openplannerteam/itinero-transit/blob/master/LICENSE</PackageLicense>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>

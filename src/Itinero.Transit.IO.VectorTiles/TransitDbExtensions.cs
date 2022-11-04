@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using GeoAPI.Geometries;
 using Itinero.Transit.Algorithms.Mergers;
 using Itinero.Transit.Data;
 using Itinero.Transit.Data.Core;
@@ -95,8 +94,8 @@ namespace Itinero.Transit.IO.VectorTiles
                         new Coordinate(stop2.Longitude, stop2.Latitude), 
                     }), new AttributesTable()), 0, 0, 0);
 
-                    feature.feature.Attributes.AddAttribute("stop_id_departure", stop1.GlobalId);
-                    feature.feature.Attributes.AddAttribute("stop_id_arrival", stop2.GlobalId);
+                    feature.feature.Attributes.Add("stop_id_departure", stop1.GlobalId);
+                    feature.feature.Attributes.Add("stop_id_arrival", stop2.GlobalId);
                     stop1GlobalId = stop1.GlobalId;
                     stop2GlobalId = stop2.GlobalId;
                     
@@ -120,7 +119,7 @@ namespace Itinero.Transit.IO.VectorTiles
                     if (!feature.feature.Attributes.Exists($"operator_{op.GlobalId}"))
                     {
                         // add operator details.
-                        feature.feature.Attributes.AddAttribute($"operator_{op.GlobalId}", "true");
+                        feature.feature.Attributes.Add($"operator_{op.GlobalId}", "true");
                         feature.operators += 1;
                     }
                 }
@@ -131,7 +130,7 @@ namespace Itinero.Transit.IO.VectorTiles
                     if (!feature.feature.Attributes.Exists($"route_type_{newRouteType}"))
                     {
                         // add route type.
-                        feature.feature.Attributes.AddAttribute($"route_type_{newRouteType}", "true");
+                        feature.feature.Attributes.Add($"route_type_{newRouteType}", "true");
                         feature.routeTypes += 1;
                     }
                 }
@@ -143,7 +142,7 @@ namespace Itinero.Transit.IO.VectorTiles
                     {
                         // add route.
                         feature.routes += 1;
-                        feature.feature.Attributes.AddAttribute($"route_{newRouteId}","true");
+                        feature.feature.Attributes.Add($"route_{newRouteId}","true");
                         var route = Data.Route.FromTrip(trip,
                             oid => transitDbSnapShot.OperatorDb.Get(oid), newRouteId);
 
@@ -184,9 +183,9 @@ namespace Itinero.Transit.IO.VectorTiles
             return features.Values.Select(x =>
             {
                 var (feature, routes, routeTypes, operators) = x;
-                feature.Attributes.AddAttribute("route_count", routes);
-                feature.Attributes.AddAttribute("route_type_count", routeTypes);
-                feature.Attributes.AddAttribute("operator_count", operators);
+                feature.Attributes.Add("route_count", routes);
+                feature.Attributes.Add("route_type_count", routeTypes);
+                feature.Attributes.Add("operator_count", operators);
                 return feature;
             });
         }
@@ -200,11 +199,11 @@ namespace Itinero.Transit.IO.VectorTiles
                     new AttributesTable());
                 bbox.AddCoordinate((stop.Longitude, stop.Latitude));
                 
-                feature.Attributes.AddAttribute("id", stop.GlobalId);
+                feature.Attributes.Add("id", stop.GlobalId);
 
                 foreach (var attribute in stop.Attributes)
                 {
-                    feature.Attributes.AddAttribute(attribute.Key, attribute.Value);
+                    feature.Attributes.Add(attribute.Key, attribute.Value);
                 }
 
                 if (!routesPerStops.TryGetValue(stop.GlobalId, out var tripInfo)) continue;
@@ -214,23 +213,23 @@ namespace Itinero.Transit.IO.VectorTiles
                 foreach (var route in routes.Values)
                 {
                     if (feature.Attributes.Exists($"route_{route.Id}")) continue;
-                    feature.Attributes.AddAttribute($"route_{route.Id}", route.ToJson());
+                    feature.Attributes.Add($"route_{route.Id}", route.ToJson());
 
                     if (!feature.Attributes.Exists($"route_type_{route.RouteType}"))
                     {
-                        feature.Attributes.AddAttribute($"route_type_{route.RouteType}", "true");
+                        feature.Attributes.Add($"route_type_{route.RouteType}", "true");
                     }
 
                     if (feature.Attributes.Exists($"operator_{route.OperatorGlobalId}")) continue;
-                    feature.Attributes.AddAttribute($"operator_{route.OperatorGlobalId}", "true");
+                    feature.Attributes.Add($"operator_{route.OperatorGlobalId}", "true");
                     o++;
                 }
                 
-                feature.Attributes.AddAttribute("route_count", routes.Count);
-                feature.Attributes.AddAttribute("arrivals", tripInfo.arrivals);
-                feature.Attributes.AddAttribute("departures", tripInfo.departures);
-                feature.Attributes.AddAttribute("movements", tripInfo.departures + tripInfo.arrivals);
-                feature.Attributes.AddAttribute("operator_count", o);
+                feature.Attributes.Add("route_count", routes.Count);
+                feature.Attributes.Add("arrivals", tripInfo.arrivals);
+                feature.Attributes.Add("departures", tripInfo.departures);
+                feature.Attributes.Add("movements", tripInfo.departures + tripInfo.arrivals);
+                feature.Attributes.Add("operator_count", o);
 
                 yield return feature;
             }
