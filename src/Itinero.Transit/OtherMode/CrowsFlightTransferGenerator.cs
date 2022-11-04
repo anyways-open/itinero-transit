@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Itinero.Transit.Data.Core;
 using Itinero.Transit.Utils;
@@ -72,7 +73,7 @@ namespace Itinero.Transit.OtherMode
 
         public string OtherModeIdentifier()
         {
-            return $"crowsflight&maxDistance={_maxDistance}&speed={_speed}";
+            return FormattableString.Invariant($"crowsflight&maxDistance={_maxDistance}&speed={_speed}");
         }
 
         public IOtherModeGenerator GetSource(Stop from, Stop to)
