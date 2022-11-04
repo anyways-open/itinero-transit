@@ -13,14 +13,6 @@
         <ProjectReference Include="..\Itinero.Transit\Itinero.Transit.csproj" />
     </ItemGroup>
 
-
-    <ItemGroup>
-        <Compile Include="..\..\SharedAssemblyVersion.cs">
-            <Link>Properties/SharedAssemblyVersion.cs</Link>
-        </Compile>
-    </ItemGroup>
-
-
     <ItemGroup>
       <PackageReference Include="NetTopologySuite.IO.VectorTiles" Version="0.0.15" />
     </ItemGroup>
