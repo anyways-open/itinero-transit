@@ -1,7 +1,6 @@
 using System.IO;
 using Itinero.Transit.Data;
 using Itinero.Transit.IO.OSM.Writer;
-using OsmSharp;
 using OsmSharp.Streams;
 
 namespace Itinero.Transit.Tests.Functional.IO.OSM.Writer
@@ -19,7 +18,7 @@ namespace Itinero.Transit.Tests.Functional.IO.OSM.Writer
             });
 
             using var stream = File.Create("test.osm");
-            var osmStreamTarget = new OsmSharp.Streams.XmlOsmStreamTarget(stream);
+            var osmStreamTarget = new XmlOsmStreamTarget(stream);
             osmStreamTarget.RegisterSource(osmStreamSource);
             osmStreamTarget.Pull();
             osmStreamTarget.Flush();
