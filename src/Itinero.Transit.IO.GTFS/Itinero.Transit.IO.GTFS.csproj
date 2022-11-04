@@ -14,14 +14,6 @@
       <ProjectReference Include="..\Itinero.Transit\Itinero.Transit.csproj" />
     </ItemGroup>
 
-
-    <ItemGroup>
-      <Compile Include="..\..\SharedAssemblyVersion.cs">
-        <Link>Properties/SharedAssemblyVersion.cs</Link>
-      </Compile>
-    </ItemGroup>
-
-
     <ItemGroup>
       <PackageReference Include="GTFS" Version="3.0.0-pre001" />
     </ItemGroup>
