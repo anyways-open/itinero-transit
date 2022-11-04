@@ -22,7 +22,7 @@
 
 
     <ItemGroup>
-      <PackageReference Include="NetTopologySuite.IO.VectorTiles" Version="0.0.7" />
+      <PackageReference Include="NetTopologySuite.IO.VectorTiles" Version="0.0.15" />
     </ItemGroup>
 
 
