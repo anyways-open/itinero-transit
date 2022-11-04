@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../Itinero.Transit.Common.props" />
 
     <PropertyGroup>
     <title>Itinero.Transit.IO.LC</title>
@@ -30,12 +31,6 @@
     <ItemGroup>
         <PackageReference Include="CacheCow.Client" Version="2.4.3" />
         <PackageReference Include="openplannerteam.Json-LD.net" Version="0.1.2" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Include="..\..\SharedAssemblyVersion.cs">
-        <Link>Properties/SharedAssemblyVersion.cs</Link>
-      </Compile>
     </ItemGroup>
 
 </Project>

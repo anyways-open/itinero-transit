@@ -1,4 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../Itinero.Transit.Common.props" />
+
   <PropertyGroup>
     <title>Itinero.Transit</title>
     <AssemblyName>Itinero.Transit</AssemblyName>
@@ -7,11 +9,6 @@
     <ReleaseNotes>TransitDB EAS</ReleaseNotes>
     <Authors>Pietervdvn;Ben Abelshausen;openplannerteam</Authors>
     <PackageTags>CSA;Connection-Scan-Algorithm;Public-Transport;Routing;linked-data;</PackageTags>
-    <PackageIconUrl>https://avatars0.githubusercontent.com/u/30265183</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/openplannerteam/Itinero-Transit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/anyways-open/itinero-transit</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseUrl>https://github.com/openplannerteam/itinero-transit/blob/master/LICENSE</PackageLicenseUrl>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -24,12 +21,6 @@
 
   <ItemGroup>
     <None Remove="Itinero.Transit.csproj.DotSettings" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\..\SharedAssemblyVersion.cs">
-      <Link>Properties/SharedAssemblyVersion.cs</Link>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>

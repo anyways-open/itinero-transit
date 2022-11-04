@@ -1,4 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../Itinero.Transit.Common.props" />
+
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -23,12 +25,6 @@
         <PackageReference Include="NodaTime" Version="2.4.5" />
         <PackageReference Include="OsmSharp" Version="6.2.0" />
         <PackageReference Include="GTFS" Version="3.0.0-pre002" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Include="..\..\SharedAssemblyVersion.cs">
-        <Link>Properties/SharedAssemblyVersion.cs</Link>
-      </Compile>
     </ItemGroup>
 
 </Project>
