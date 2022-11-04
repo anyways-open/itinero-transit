@@ -1,18 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Itinero.Transit.Common.props" />
 
     <PropertyGroup>
     <title>Itinero.Transit.IO.LC</title>
     <AssemblyName>Itinero.Transit.IO.LC</AssemblyName>
     <Description>A library to load Connections into the TransitDB</Description>
-    <Summary>This package provides the practical footwork for Itinero.Transit as it loads the Connections from a Linked Connections SErver.</Summary>
     <ReleaseNotes>TransitDB EAS</ReleaseNotes>
     <Authors>Pietervdvn;Ben Abelshausen;openplannerteam</Authors>
     <PackageId>Itinero.Transit.IO.LC</PackageId>
     <PackageTags>CSA;Connection-Scan-Algorithm;Public-Transport;Routing;linked-data;</PackageTags>
-    <PackageIconUrl>https://avatars0.githubusercontent.com/u/30265183</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/openplannerteam/Itinero-Transit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/openplannerteam/Itinero-Transit</RepositoryUrl>
-    <PackageLicense>https://github.com/openplannerteam/itinero-transit/blob/master/LICENSE</PackageLicense>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

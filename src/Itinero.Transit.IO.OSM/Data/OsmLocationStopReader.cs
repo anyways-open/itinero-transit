@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Itinero.Transit.Data;
@@ -66,7 +67,7 @@ namespace Itinero.Transit.IO.OSM.Data
             Id = new StopId(_databaseId, (uint) ((lat + 90.0) * _precision), (uint) ((lon + 180) * _precision));
             Latitude = (double) Id.LocalTileId / _precision - 90.0;
             Longitude = (double) Id.LocalId / _precision - 180.0;
-            GlobalId = $"https://www.openstreetmap.org/#map=19/{Latitude}/{Longitude}";
+            GlobalId = FormattableString.Invariant($"https://www.openstreetmap.org/#map=19/{Latitude}/{Longitude}");
             return true;
         }
 
@@ -85,7 +86,7 @@ namespace Itinero.Transit.IO.OSM.Data
             Id = new StopId(_databaseId, (uint) ((lat + 90.0) * _precision), (uint) ((lon + 180) * _precision));
             Latitude = (double) Id.LocalTileId / _precision - 90.0;
             Longitude = (double) Id.LocalId / _precision - 180.0;
-            GlobalId = $"https://www.openstreetmap.org/#map=19/{Latitude}/{Longitude}";
+            GlobalId =  FormattableString.Invariant($"https://www.openstreetmap.org/#map=19/{Latitude}/{Longitude}");
             if (_hoard)
             {
                 AddSearchableLocation(Id);
@@ -103,7 +104,7 @@ namespace Itinero.Transit.IO.OSM.Data
 
             Latitude = (double) stop.LocalTileId / _precision - 90.0;
             Longitude = (double) stop.LocalId / _precision - 180.0;
-            GlobalId = $"https://www.openstreetmap.org/#map=19/{Latitude}/{Longitude}";
+            GlobalId =  FormattableString.Invariant($"https://www.openstreetmap.org/#map=19/{Latitude}/{Longitude}");
             Id = stop;
             return true;
         }

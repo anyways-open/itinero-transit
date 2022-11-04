@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+    <!--- Package information, Version -->
+    <PropertyGroup>
+        <PackageVersion>1.0.0-alpha-002</PackageVersion>
+        <NeutralLanguage>en</NeutralLanguage>
+        <Description>Itinero - Routeplanning for .NET.</Description>
+        <Copyright>Itinero BV</Copyright>
+        <Description>A library implementing Connection Scan Algorithm for routing of Public Transport networks</Description>
+        <PackageProjectUrl>https://www.itinero.tech/</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/openplannerteam/itinero-transit/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIconUrl>https://www.itinero.tech/logos/itinero_logo_notext.svg.128.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/anyways-open/itinero-transit</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Authors>Itinero Contributors</Authors>
+        <Company>Itinero BV</Company>
+    </PropertyGroup>
+</Project>
