@@ -44,3 +44,7 @@ jobs:
     - name: Nuget Pack
       run: dotnet pack -c release
       working-directory: ./src/Itinero.Transit.IO.OSM/
+
+    - name: Nuget Push
+      run: dotnet nuget push **/*.nupkg --skip-duplicate -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/anyways-open/index.json
+      working-directory: ./src/
