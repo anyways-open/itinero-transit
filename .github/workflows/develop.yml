@@ -34,10 +34,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal  
-
-    - name: Run dotnet format
-      run: dotnet format --verify-no-changes --verbosity diagnostic --no-restore
-
+      
     - name: Nuget Pack
       run: dotnet pack -c release
       working-directory: ./src/Itinero.Transit/
